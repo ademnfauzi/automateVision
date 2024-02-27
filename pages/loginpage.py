@@ -1,6 +1,6 @@
 import time
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains å
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.action_chains import ActionChains
 from objek.objekvision import Objek
 import json

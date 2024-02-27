@@ -17,16 +17,18 @@ with open('/Users/ade/Documents/Automation/automateVision/report/report.html', '
 passed_count, failed_count = extract_test_counts(html_content)
 print(f"Passed: {passed_count}, Failed: {failed_count}")
 
+
+# Send Discord
 # Discord webhook setup
 webhook_url = 'https://discord.com/api/webhooks/1211947885659430912/2MJhfYavdeWCJKeQQhGL48C31IswE_SI6uIkWqy74wohed_7w408h0E1sAPyrHuYeZd9'
 
 # Create a payload with the message and file
 payload = {
-    'content': f"Passed: {passed_count}, Failed: {failed_count}",
+    'content': f"**Result Report Automation**\nPassed: {passed_count}, Failed: {failed_count}",
 }
 
 files = {
-    'file': ('report.html', open('/Users/ade/Documents/Automation/automateVision/report/report.html', 'rb'))
+    # 'file': ('report.html', open('/Users/ade/Documents/Automation/automateVision/report/report.html', 'rb'))
 }
 
 # Make a POST request to the Discord webhook URL
