@@ -34,18 +34,3 @@ def test_loginWrongPW(driver):
     login.clickLogin('8997775838', '4123lupaaaa')
     assert login.wrongPassword()
     login.closeBrowser()
-
-
-
-
-# def test_loginWrongPW():
-#     login = LoginPage(drivers)
-#     login.open()
-#     login.clickLogin(login.username, "123213")
-#     assert login.wrongPassword()
-    
-# def test_loginUnregistered():
-#     login = LoginPage(drivers)
-#     login.open()
-#     login.clickLogin("123123asdas", "4321lupa")
-#     assert login.unregisteredAkun()

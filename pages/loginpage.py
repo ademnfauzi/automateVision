@@ -1,17 +1,16 @@
 import time
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-
+from selenium.webdriver.common.action_chains import ActionChains 
 
 class LoginPage:
     def __init__(self, driver):
         self.driver = driver
         self.url = 'https://www.visionplus.id'
- 
+
 
     def open(self):
         self.driver.get(self.url)
-    
+        time.sleep(3)
     
     def clickLogin(self, username, password):
         time.sleep(2)
