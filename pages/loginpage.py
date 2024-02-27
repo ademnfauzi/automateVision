@@ -1,12 +1,16 @@
 import time
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains 
+from selenium.webdriver.common.action_chains import ActionChains å
+from selenium.webdriver.common.action_chains import ActionChains
+from objek.objekvision import Objek
+import json
 
 class LoginPage:
     def __init__(self, driver):
         self.driver = driver
         self.url = 'https://www.visionplus.id'
-
+        # with open('testdata/config.json') as json_file:
+        #     self.data = json.load(json_file)
 
     def open(self):
         self.driver.get(self.url)
@@ -14,19 +18,18 @@ class LoginPage:
     
     def clickLogin(self, username, password):
         time.sleep(2)
-        self.driver.find_element(By.XPATH, '//span[contains(text(), "Log in/Register")]').click()
+        objek = Objek()
+        self.driver.find_element(By.XPATH, objek.buttonLoginRegis).click()
         mainWindow = self.driver.current_window_handle  
         for handle in self.driver.window_handles:  
             if handle != mainWindow:
                 self.driver.switch_to.window(handle)
                 break
         time.sleep(1)
-        title = self.driver.title
-        print(title)
-        self.driver.find_element(By.XPATH, "//input[@id='phone']").send_keys(username)
-        self.driver.find_element(By.XPATH, "//input[@id='fld_Password']").send_keys(password)
+        self.driver.find_element(By.XPATH, objek.form_inputPhone).send_keys(username)
+        self.driver.find_element(By.XPATH, objek.form_inputPassword).send_keys(password)
         time.sleep(1)
-        self.driver.find_element(By.XPATH, "//button[@id='btn_Login']").click()
+        self.driver.find_element(By.XPATH, objek.form_buttonLogin).click()
         time.sleep(5)
     
     def successLogin(self):

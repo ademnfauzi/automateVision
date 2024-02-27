@@ -43,14 +43,6 @@ hoverTV = driver.find_element(By.XPATH, "//video[@id = 'video']")
 # title_h = hoverTV.get_attribute('title')
 # print(atribut_hover)
 # print(title_h)
-
-
-
-
-
-
-
-
 try:
     # get selector element pause
     element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#player > div > div.player-paused.layout-align-center-center.layout-column")))
@@ -65,10 +57,6 @@ except:
     element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#player > div > div.player-paused.layout-align-center-center.layout-column")))
     print("element  ada, sudah kepause, dari variable hoverPause")
 
-
-
-# player > div > div.player-paused.layout-align-center-center.layout-column
-time.sleep(10)
 
 time.sleep(1000)
 
